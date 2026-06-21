@@ -1,0 +1,83 @@
+:root {
+
+    /* ========= CORES PRINCIPAIS ========= */
+
+    --color-primary: #69b51c;
+    --color-primary-hover: #6BC348;
+    --color-primary-dark: #4C8E2D;
+
+    /* ========= BACKGROUND ========= */
+
+    --bg-body: #05090D;
+    --bg-primary: #08131C;
+    --bg-secondary: #0C1824;
+    --bg-card: #101D29;
+    --bg-card-hover: #162534;
+
+    /* ========= BORDAS ========= */
+
+    --border-primary: #203445;
+    --border-secondary: #2B4257;
+
+    /* ========= TEXTO ========= */
+
+    --text-title: #FFFFFF;
+    --text-primary: #E4E9EE;
+    --text-secondary: #A9B4BF;
+    --text-muted: #768392;
+
+    /* ========= STATUS ========= */
+
+    --success: #5CC85C;
+    --warning: #F6C343;
+    --danger: #FF5C5C;
+    --info: #4BA3FF;
+
+    /* ========= SOMBRAS ========= */
+
+    --shadow-card: rgba(0, 0, 0, .35);
+    --shadow-primary: rgb(101, 101, 101);
+    --shadow-green: rgba(126, 217, 87, .25);
+
+    /* ========= OVERLAY ========= */
+
+    --overlay-dark: rgba(5, 9, 13, .75);
+    --overlay-card: rgba(16, 29, 41, .80);
+
+}
+
+:root {
+
+    --gradient-primary: linear-gradient(135deg,
+            #7ED957 0%,
+            #4C8E2D 100%);
+
+    --gradient-background: linear-gradient(180deg,
+            #05090D 0%,
+            #08131C 100%);
+
+    --gradient-card: linear-gradient(180deg,
+            #101D29 0%,
+            #0B141E 100%);
+
+}
+
+:root {
+
+    --card-carnivore: #B91C1C;
+    --card-herbivore: #3FA34D;
+    --card-omnivore: #E9A23B;
+
+    --period-jurassic: #0F766E;
+    --period-cretaceous: #2563EB;
+    --period-triassic: #7C3AED;
+
+}
+
+body {
+    background: var(--bg-body);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
