@@ -1,0 +1,83 @@
+#inicio {
+    width: 100%;
+    background-image: url('../imagens/dinoMaster.jpg');
+    background-position: center;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+.banner {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--text-title);
+    text-align: start;
+    padding: 5px;
+
+    background: linear-gradient(to right,
+            #0e1618 0%,
+            rgba(14, 22, 24, 1) 30%,
+            rgba(14, 22, 24, 0.96) 40%,
+            rgba(14, 22, 24, 0.88) 58%,
+            rgba(14, 22, 24, 0.72) 72%,
+            rgba(14, 22, 24, 0.50) 84%,
+            rgba(14, 22, 24, 0.25) 93%,
+            rgba(14, 22, 24, 0.08) 98%,
+            rgba(14, 22, 24, 0) 100%);
+}
+
+.conteudo-b {
+    width: 40%;
+    padding: 10px 30px;
+}
+
+.banner .conteudo-b h2 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.banner .overlay p {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.banner h2 span {
+    color: var(--color-primary);
+    font-size: 3rem;
+}
+
+.conteiner-infos-dados {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    border-bottom: 0.5px solid var(--border-primary);
+    padding: 5px;
+}
+
+.infos {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    background: var(--shadow-green2);
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid var(--shadow-green);
+}
+
+.infos h3 {
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+}
+
+.infos p {
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+}

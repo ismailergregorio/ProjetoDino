@@ -8,9 +8,9 @@
 
     /* ========= BACKGROUND ========= */
 
-    --bg-body: #05090D;
-    --bg-primary: #08131C;
-    --bg-secondary: #0C1824;
+    --bg-body: #0e1618;
+    --bg-primary: #0d1517;
+    --bg-secondary: #162325;
     --bg-card: #101D29;
     --bg-card-hover: #162534;
 
@@ -38,6 +38,7 @@
     --shadow-card: rgba(0, 0, 0, .35);
     --shadow-primary: rgb(101, 101, 101);
     --shadow-green: rgba(126, 217, 87, .25);
+    --shadow-green2: rgba(126, 217, 87, 0.077);
 
     /* ========= OVERLAY ========= */
 
