@@ -1,0 +1,43 @@
+import { header } from "./header.js";
+import { buscarDinossauro } from "./api2.js";
+import { banner } from "./banner-page.js";
+const DADOS_IMAGENS = "./Dados/imagens.json";
+const parametros = new URLSearchParams(window.location.search);
+
+const nome = parametros.get("name");
+
+console.log(nome);
+
+async function carregarDadosPorValor(urlArquivo, chave, nomeBuscado) {
+  try {
+    const resposta = await fetch(urlArquivo);
+
+    if (!resposta.ok) {
+      throw new Error(`Erro ao carregar o arquivo: ${resposta.status}`);
+    }
+
+    const listaDados = await resposta.json();
+
+    const objetoEncontrado = listaDados.find(
+      (item) => item[chave] === nomeBuscado,
+    );
+
+    if (objetoEncontrado) {
+      return objetoEncontrado;
+    } else {
+      console.log(
+        `Nenhum registro encontrado onde a chave "${chave}" seja "${nomeBuscado}"`,
+      );
+      return null;
+    }
+  } catch (erro) {
+    console.error("Erro ao carregar o arquivo:", erro);
+  }
+}
+
+const dados = await carregarDadosPorValor(DADOS_IMAGENS, "nome", nome);
+const infoDino = await buscarDinossauro(nome);
+console.log(dados);
+console.log(infoDino);
+header();
+banner(infoDino,dados);

@@ -1,0 +1,101 @@
+#barra-navegacao {
+  margin: 5px 10px;
+}
+
+.mais-dino {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--bg-secondary);
+
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mais-dino a {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 10px 10px;
+
+  color: var(--text-secondary);
+
+  text-decoration: none;
+
+  text-transform: uppercase;
+
+  font-size: 0.8rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  position: relative;
+
+  transition: 0.3s;
+}
+
+.mais-dino a i {
+  width: 5px;
+  height: 5px;
+
+  stroke-width: 2;
+}
+
+.mais-dino a:hover {
+  background: rgba(105, 181, 28, 0.08);
+
+  color: white;
+}
+
+.mais-dino a.ativo {
+  color: var(--color-primary);
+
+  background: rgba(105, 181, 28, 0.08);
+}
+
+.mais-dino a.ativo::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: var(--color-primary);
+
+  box-shadow: 0 0 12px rgba(105, 181, 28, 0.45);
+}
+
+.mais-dino a:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+@media (max-width: 900px) {
+  .mais-dino {
+    overflow-x: auto;
+  }
+
+  .mais-dino a {
+    min-width: 190px;
+
+    justify-content: flex-start;
+
+    padding: 18px;
+  }
+}

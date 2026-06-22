@@ -1,0 +1,202 @@
+[
+    {
+        "nome": "Tyrannosaurus",
+        "popularidade": 1
+    },
+    {
+        "nome": "Velociraptor",
+        "popularidade": 2
+    },
+    {
+        "nome": "Triceratops",
+        "popularidade": 3
+    },
+    {
+        "nome": "Spinosaurus",
+        "popularidade": 4
+    },
+    {
+        "nome": "Stegosaurus",
+        "popularidade": 5
+    },
+    {
+        "nome": "Brachiosaurus",
+        "popularidade": 6
+    },
+    {
+        "nome": "Diplodocus",
+        "popularidade": 7
+    },
+    {
+        "nome": "Allosaurus",
+        "popularidade": 8
+    },
+    {
+        "nome": "Ankylosaurus",
+        "popularidade": 9
+    },
+    {
+        "nome": "Carnotaurus",
+        "popularidade": 10
+    },
+    {
+        "nome": "Giganotosaurus",
+        "popularidade": 11
+    },
+    {
+        "nome": "Parasaurolophus",
+        "popularidade": 12
+    },
+    {
+        "nome": "Iguanodon",
+        "popularidade": 13
+    },
+    {
+        "nome": "Pachycephalosaurus",
+        "popularidade": 14
+    },
+    {
+        "nome": "Apatosaurus",
+        "popularidade": 15
+    },
+    {
+        "nome": "Compsognathus",
+        "popularidade": 16
+    },
+    {
+        "nome": "Gallimimus",
+        "popularidade": 17
+    },
+    {
+        "nome": "Dilophosaurus",
+        "popularidade": 18
+    },
+    {
+        "nome": "Deinonychus",
+        "popularidade": 19
+    },
+    {
+        "nome": "Ceratosaurus",
+        "popularidade": 20
+    },
+    {
+        "nome": "Corythosaurus",
+        "popularidade": 21
+    },
+    {
+        "nome": "Albertosaurus",
+        "popularidade": 22
+    },
+    {
+        "nome": "Therizinosaurus",
+        "popularidade": 23
+    },
+    {
+        "nome": "Argentinosaurus",
+        "popularidade": 24
+    },
+    {
+        "nome": "Majungasaurus",
+        "popularidade": 25
+    },
+    {
+        "nome": "Acrocanthosaurus",
+        "popularidade": 26
+    },
+    {
+        "nome": "Suchomimus",
+        "popularidade": 27
+    },
+    {
+        "nome": "Utahraptor",
+        "popularidade": 28
+    },
+    {
+        "nome": "Oviraptor",
+        "popularidade": 29
+    },
+    {
+        "nome": "Troodon",
+        "popularidade": 30
+    },
+    {
+        "nome": "Kentrosaurus",
+        "popularidade": 31
+    },
+    {
+        "nome": "Edmontosaurus",
+        "popularidade": 32
+    },
+    {
+        "nome": "Styracosaurus",
+        "popularidade": 33
+    },
+    {
+        "nome": "Monolophosaurus",
+        "popularidade": 34
+    },
+    {
+        "nome": "Amargasaurus",
+        "popularidade": 35
+    },
+    {
+        "nome": "Dreadnoughtus",
+        "popularidade": 36
+    },
+    {
+        "nome": "Torosaurus",
+        "popularidade": 37
+    },
+    {
+        "nome": "Eoraptor",
+        "popularidade": 38
+    },
+    {
+        "nome": "Coelophysis",
+        "popularidade": 39
+    },
+    {
+        "nome": "Plateosaurus",
+        "popularidade": 40
+    },
+    {
+        "nome": "Microraptor",
+        "popularidade": 41
+    },
+    {
+        "nome": "Cryolophosaurus",
+        "popularidade": 42
+    },
+    {
+        "nome": "Herrerasaurus",
+        "popularidade": 43
+    },
+    {
+        "nome": "Concavenator",
+        "popularidade": 44
+    },
+    {
+        "nome": "Rugops",
+        "popularidade": 45
+    },
+    {
+        "nome": "Saurophaganax",
+        "popularidade": 46
+    },
+    {
+        "nome": "Camarasaurus",
+        "popularidade": 47
+    },
+    {
+        "nome": "Euoplocephalus",
+        "popularidade": 48
+    },
+    {
+        "nome": "Nigersaurus",
+        "popularidade": 49
+    },
+    {
+        "nome": "Mapusaurus",
+        "popularidade": 50
+    }
+]

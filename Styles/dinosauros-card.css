@@ -8,9 +8,7 @@
     position: relative;
 
     width: 300px;
-    height: 450px;
-
-    background: url("../imagens/dinoCard.jpg") left top / cover no-repeat;
+    height: 400px;
 
     border-radius: 16px;
     overflow: hidden;

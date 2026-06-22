@@ -1,0 +1,59 @@
+.lista-local {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+.icone-local {
+  margin-top: 3px;
+}
+
+.icone-local i {
+  color: #69b51c;
+
+  width: 18px;
+
+  height: 18px;
+}
+
+.infos-local h4 {
+  color:var(--text-primary);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.lista-local .infos-local p {
+  color: var(--text-secondary);
+  font-size: 0.2rem;
+
+}
+
+.btn-locais {
+  width: 100%;
+
+  margin-top: 10px;
+
+  padding: 12px;
+
+  background: transparent;
+
+  color: #69b51c;
+
+  border: 1px solid #69b51c;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.25s;
+}
+
+.btn-locais:hover {
+  background: #69b51c;
+
+  color: white;
+}
