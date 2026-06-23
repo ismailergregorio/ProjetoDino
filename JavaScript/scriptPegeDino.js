@@ -1,5 +1,6 @@
 import { header } from "./header.js";
 import { buscarDinossauro } from "./api2.js";
+import { resultadoSobre,resultadoMap, resultadoListaFosseis } from "./resultado-page.js";
 import { banner } from "./banner-page.js";
 const DADOS_IMAGENS = "./Dados/imagens.json";
 const parametros = new URLSearchParams(window.location.search);
@@ -40,4 +41,7 @@ const infoDino = await buscarDinossauro(nome);
 console.log(dados);
 console.log(infoDino);
 header();
-banner(infoDino,dados);
+banner(infoDino, dados);
+resultadoSobre(infoDino, dados);
+resultadoListaFosseis(infoDino, dados);
+resultadoMap(infoDino, dados);

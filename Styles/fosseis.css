@@ -1,0 +1,11 @@
+.mapa {
+  margin: 15px;
+  height: 500px;
+}
+#map {
+  width: 100%; /* Ocupa toda a largura disponível da tela */
+  height: 500px; /* Define uma altura consistente para o mapa aparecer bem */
+  margin-top: 20px; /* Apenas um espaçamento opcional do topo */
+  display: block;
+  border-radius: 15px;
+}

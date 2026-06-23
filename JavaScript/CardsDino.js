@@ -1,6 +1,6 @@
 export async function carregarCards(dinosApi, dados) {
   const container = document.getElementById("dinosauros-cards");
-  const url = dados.imagem
+  const url = dados.imagem;
 
   const urlImagem = url.match(
     /https:\/\/images\.dinosaurpictures\.org\/.+$/,
@@ -20,4 +20,5 @@ export async function carregarCards(dinosApi, dados) {
             </div>
 
         `;
+  lucide.createIcons();
 }

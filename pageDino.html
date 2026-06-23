@@ -2,96 +2,83 @@
 <html lang="en">
 
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Dino</title>
- <link rel="stylesheet" href="styles.css">
- <link rel="stylesheet" href="Styles/header.css">
- <link rel="stylesheet" href="Styles/banner-page.css">
- <link rel="stylesheet" href="Styles/filtros-page.css">
- <link rel="stylesheet" href="Styles/dados-page.css">
- <link rel="stylesheet" href="Styles/info-fosseis.css">
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Dino</title>
+     <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="Styles/header.css">
+     <link rel="stylesheet" href="Styles/banner-page.css">
+     <link rel="stylesheet" href="Styles/filtros-page.css">
+     <link rel="stylesheet" href="Styles/dados-page.css">
+     <link rel="stylesheet" href="Styles/info-fosseis.css">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
 <body>
- <header id="naveBar">
+     <header id="naveBar">
 
- </header>
- <main>
-  <section id="inicio">
-  </section>
-  <section id="barra-navegacao">
-   <nav class="mais-dino">
-    <a href="#inicio" class="ativo">
-     <i data-lucide="layout-dashboard"></i>
-     <span>Visão Geral</span>
-    </a>
-
-    <a href="#locais">
-     <i data-lucide="map-pin"></i>
-     <span>Locais de Fósseis</span>
-    </a>
-
-    <a href="#classificacao">
-     <i data-lucide="network"></i>
-     <span>Classificação</span>
-    </a>
-
-    <a href="#linha-tempo">
-     <i data-lucide="clock-3"></i>
-     <span>Linha do Tempo</span>
-    </a>
-
-    <a href="#referencias">
-     <i data-lucide="file-text"></i>
-     <span>Referências</span>
-    </a>
-   </nav>
-  </section>
-  <section id="resultado">
-   <div class="sobre resutado-card">
-    <h2>Sobre</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, repudiandae possimus.
-     Amet voluptates dolores in quam optio, aut explicabo ut fuga, iusto dolorum deserunt l
-     audantium officia quidem dolore hic ad?</p>
-   </div>
-   <div class="map resutado-card">
-    <h2>Locais onde fosseis foram encotrados</h2>
-    <div id="map">
-
-    </div>
-   </div>
-   <div class="pricipais-foseis resutado-card">
-    <h2>Principais locais</h2>
-    <div id="lista-locais">
-         <div class="lista-local">
-          <div class="icone-local">
-           <i data-lucide="map-pin"></i>
+     </header>
+     <main>
+          <section>
+          <div id="inicio">
           </div>
-          <div class="infos-local">
-           <h4>Hell Creek Fomrmation</h4>
-           <p>Montana,Estados Unidos</p>
-           <p>66-66 milhoes de anos </p>
-          </div>
-         </div>
-    </div>
+          </section>
 
-    <button class="btn-locais">
-     Ver todos os locais
-     <span id="total-locais">(0)</span>
-    </button>
+          <section id="barra-navegacao">
+               <nav class="mais-dino">
+                    <a href="#inicio" class="ativo">
+                         <i data-lucide="layout-dashboard"></i>
+                         <span>Visão Geral</span>
+                    </a>
 
-   </div>
-  </section>
- </main>
+                    <a href="#locais">
+                         <i data-lucide="map-pin"></i>
+                         <span>Locais de Fósseis</span>
+                    </a>
+
+                    <a href="#classificacao">
+                         <i data-lucide="network"></i>
+                         <span>Classificação</span>
+                    </a>
+
+                    <a href="#linha-tempo">
+                         <i data-lucide="clock-3"></i>
+                         <span>Linha do Tempo</span>
+                    </a>
+
+                    <a href="#referencias">
+                         <i data-lucide="file-text"></i>
+                         <span>Referências</span>
+                    </a>
+               </nav>
+          </section>
+          <section id="resultado">
+               <div class="sobre resutado-card" id="sobre">
+               </div>
+               <div class="map resutado-card">
+                    <h2>Locais onde fosseis foram encotrados</h2>
+                    <div id="map">
+
+                    </div>
+               </div>
+               <div class="pricipais-foseis resutado-card">
+                    <h2>Principais locais</h2>
+                    <div id="lista-locais" id="locais">
+                    </div>
+                    <button class="btn-locais">
+                         Ver todos os locais
+                         <span id="total-locais">(0)</span>
+                    </button>
+
+               </div>
+          </section>
+     </main>
 </body>
 <script type="module" src="./JavaScript/scriptPegeDino.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
- lucide.createIcons();
+     lucide.createIcons();
 </script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="JavaScript/map.js"></script>
 
 </html>

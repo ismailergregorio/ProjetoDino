@@ -7,10 +7,9 @@ export async function header() {
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#dinossauros">Dinossauros</a></li>
-                <li><a href="#periodo">Período</a></li>
-                <li><a href="#locais">Locais</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="pageCatalogoDino.html">Dinossauros</a></li>
+                <li><a href="pageMapFosseis.html">Mapa de Fosseis</a></li>
             </ul>
         </nav>
         <form action="/buscar" method="GET" class="search-form">
