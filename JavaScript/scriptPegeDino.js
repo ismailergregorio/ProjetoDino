@@ -1,7 +1,7 @@
-import { header } from "./header.js";
-import { buscarDinossauro } from "./api2.js";
-import { resultadoSobre,resultadoMap, resultadoListaFosseis } from "./resultado-page.js";
-import { banner } from "./banner-page.js";
+import { header } from "./componentes/header.js";
+import { buscarDinossauro } from "./api/api2.js";
+import { resultadoSobre,resultadoMap, resultadoListaFosseis } from "./pegeDino/resultado-page.js";
+import { banner } from "./pegeDino/banner-page.js";
 const DADOS_IMAGENS = "./Dados/imagens.json";
 const parametros = new URLSearchParams(window.location.search);
 

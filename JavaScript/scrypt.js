@@ -1,8 +1,7 @@
-// import { buscarDinossauro } from "./api.js";
-import { buscarDinossauro } from "./api2.js";
+import { buscarDinossauro } from "./api/api2.js";
 import {carregarCards} from "./CardsDino.js"
-import { filtro } from "./filtros.js";
-import { header } from "./header.js";
+import { filtro } from "./componentes/filtros.js";
+import { header } from "./componentes/header.js";
 
 const DADOS_50MAIS = "./Dados/top50.json";
 const DADOS_IMAGENS = "./Dados/imagens.json";

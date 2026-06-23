@@ -1,4 +1,4 @@
-import { mapa } from "./map.js";
+import { mapa } from "../componentes/map.js";
 export async function resultadoSobre(infoDino, dados) {
   const htmlBaner = document.getElementById("sobre");
 

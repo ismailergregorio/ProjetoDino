@@ -1,6 +1,6 @@
-import { filtro } from "./filtros.js";
-import { header } from "./header.js";
-import { buscarDinossauro } from "./api2.js";
+import { filtro } from "./componentes/filtros.js";
+import { header } from "./componentes/header.js";
+import { buscarDinossauro } from "./api/api2.js";
 import {carregarCards} from "./CardsDino.js"
 
 const DADOS_50MAIS = "./Dados/top50.json";
