@@ -2,16 +2,17 @@
     width: 100%;
     background-image: url('../imagens/dinoMaster.jpg');
     background-position: center;
-    background-size: 90%;
+    background-size: 80%;
     background-repeat: no-repeat;
     background-position: right top;
 }
 
 .banner {
     width: 60%;
+    height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     color: var(--text-title);
     text-align: start;
     padding: 5px;

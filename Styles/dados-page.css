@@ -26,12 +26,14 @@
 }
 .sobre {
   width: 20%;
+  overflow-y: auto;
 }
 .map {
   width: 60%;
 }
 .pricipais-foseis {
   width: 20%;
+  overflow-y: auto;
 }
 
 #map {

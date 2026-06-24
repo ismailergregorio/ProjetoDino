@@ -2,6 +2,7 @@ import { header } from "./componentes/header.js";
 import { buscarDinossauro } from "./api/api2.js";
 import { resultadoSobre,resultadoMap, resultadoListaFosseis } from "./pegeDino/resultado-page.js";
 import { banner } from "./pegeDino/banner-page.js";
+import { filtroPage } from "./componentes/filtros-page.js";
 const DADOS_IMAGENS = "./Dados/imagens.json";
 const parametros = new URLSearchParams(window.location.search);
 
@@ -42,6 +43,7 @@ console.log(dados);
 console.log(infoDino);
 header();
 banner(infoDino, dados);
+filtroPage();
 resultadoSobre(infoDino, dados);
 resultadoListaFosseis(infoDino, dados);
 resultadoMap(infoDino, dados);

@@ -10,7 +10,7 @@ export async function resultadoSobre(infoDino, dados) {
 }
 
 export async function resultadoMap(infoDino, dados) {
-  mapa(infoDino,"map");
+  mapa(infoDino, "map");
 }
 
 export async function resultadoListaFosseis(infoDino, dados) {
@@ -36,6 +36,9 @@ export async function resultadoListaFosseis(infoDino, dados) {
               </div>
          </div>`;
   });
+
+  const htmlQuandidade = document.getElementById("total-locais");
+  htmlQuandidade.textContent = `(${locais.length})`;
 
   if (typeof lucide !== "undefined") {
     lucide.createIcons();
