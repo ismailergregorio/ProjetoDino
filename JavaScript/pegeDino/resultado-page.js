@@ -1,4 +1,4 @@
-import { mapa } from "../componentes/map.js";
+import { mapa,ativarHoverLista } from "../componentes/map.js";
 export async function resultadoSobre(infoDino, dados) {
   const htmlBaner = document.getElementById("sobre");
 
@@ -11,9 +11,10 @@ export async function resultadoSobre(infoDino, dados) {
 
 export async function resultadoMap(infoDino, dados) {
   mapa(infoDino, "map");
+  ativarHoverLista();
 }
 
-export async function resultadoListaFosseis(infoDino, dados) {
+export async function resultadoListaFosseis(infoDino, qunt) {
   const html = document.getElementById("lista-locais");
 
   if (!html) return;
@@ -23,9 +24,9 @@ export async function resultadoListaFosseis(infoDino, dados) {
   const locais = infoDino.dadosOcorrenciasPBDB.records;
 
   locais.forEach((element, index) => {
-    if (index < 4)
+    if (index < qunt)
       html.innerHTML += `
-         <div class="lista-local">
+         <div class="lista-local"  data-id=${element.oid}>
               <div class="icone-local">
                    <i data-lucide="map-pin"></i>
               </div>

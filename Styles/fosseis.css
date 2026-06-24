@@ -1,11 +1,30 @@
 .mapa {
   margin: 15px;
   height: 500px;
+  display: flex;
+
 }
 #map {
-  width: 100%; /* Ocupa toda a largura disponível da tela */
+  width: 85%; /* Ocupa toda a largura disponível da tela */
   height: 500px; /* Define uma altura consistente para o mapa aparecer bem */
   margin-top: 20px; /* Apenas um espaçamento opcional do topo */
   display: block;
   border-radius: 15px;
 }
+.lista-local{
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+}
+#resultado h2 {
+  font-size: 1rem;
+  margin: 0;
+  padding-bottom: 10px;
+}
+#resultado p {
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 0;
+}
+

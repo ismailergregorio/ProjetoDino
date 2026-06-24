@@ -31,9 +31,15 @@
 .map {
   width: 60%;
 }
+.map-locais{
+  width: 80%;
+}
 .pricipais-foseis {
   width: 20%;
   overflow-y: auto;
+}
+.linhaDoTempo{
+  width: 100%;
 }
 
 #map {
@@ -51,4 +57,108 @@
   font-size: 0.9rem;
   margin: 0;
   padding: 0;
+}
+
+.classificacao{
+
+    width:100%;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border-primary);
+
+    border-radius:18px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px var(--shadow-card);
+
+}
+
+.titulo-secao{
+
+    color:var(--text-title);
+
+    font-size:1.6rem;
+
+    margin-bottom:25px;
+
+}
+
+.grid-classificacao{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:18px;
+
+}
+
+.card-classificacao{
+
+    background:var(--bg-secondary);
+
+    border:1px solid var(--border-primary);
+
+    border-radius:14px;
+
+    padding:18px;
+
+    transition:.25s;
+
+}
+
+.card-classificacao:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--color-primary);
+
+    box-shadow:0 0 20px var(--shadow-green);
+
+}
+
+.card-classificacao .titulo{
+
+    display:block;
+
+    color:var(--text-secondary);
+
+    font-size:.85rem;
+
+    margin-bottom:8px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+.card-classificacao .valor{
+
+    color:var(--text-title);
+
+    font-size:1.15rem;
+
+    font-weight:600;
+
+    word-break:break-word;
+
+}
+
+.highcharts-figure {
+    min-width: 320px;
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-description {
+    background: light-dark(#f2f6f2, #323232);
+    border-radius: 0 4px 4px 0;
+    border-left: 2px solid light-dark(#1d6aff, #fff);
+    font-size: 0.8rem;
+    font-style: italic;
+    padding: 8px 16px;
+    margin: 2em 10px 1em;
 }

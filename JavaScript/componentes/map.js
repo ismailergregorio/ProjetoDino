@@ -1,39 +1,72 @@
+export let m;
+export const marcadores = {};
+
 export async function mapa(locais) {
-  // 1. Inicializa o mapa primeiro (assim ele sempre renderiza, independente dos dados)
-  const mapa = L.map("map", {
+  // Inicializa o mapa
+  m = L.map("map", {
     zoomControl: true,
     worldCopyJump: true,
   }).setView([0, 0], 2);
 
-  // 2. Adiciona a camada visual escura do CARTO
+  // Camada do mapa
   L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
     attribution: "&copy; OpenStreetMap &copy; CARTO",
     minZoom: 1,
     maxZoom: 20,
-  }).addTo(mapa);
+  }).addTo(m);
 
-  // 3. Validação segura: extrai os records se eles existirem, senão cria uma array vazia []
   const locaisFosseis = locais?.dadosOcorrenciasPBDB?.records || [];
 
-  // 4. Se a lista não estiver vazia, adiciona os marcadores
-  if (locaisFosseis.length > 0) {
-    locaisFosseis.forEach((local) => {
-      // Verifica se o registro possui coordenadas válidas antes de plotar
-      if (local.lat && local.lng) {
-        L.circleMarker([local.lat, local.lng], {
-          radius: 7,
-          fillColor: "#69b51c",
-          color: "#ffffff",
-          weight: 2,
-          opacity: 1,
-          fillOpacity: 0.9,
-        })
-          // Corrigido para carregar a propriedade correta de identificação do dinossauro (ex: tna ou idn da API)
-          .bindPopup(
-            `<strong>${local.tna || local.idn || "Dinossauro"}</strong>`,
-          )
-          .addTo(mapa);
+  // Adiciona os marcadores
+  locaisFosseis.forEach((local) => {
+    if (!local.lat || !local.lng) return;
+
+    const marker = L.circleMarker([local.lat, local.lng], {
+      radius: 7,
+      fillColor: "#69b51c",
+      color: "#ffffff",
+      weight: 2,
+      opacity: 1,
+      fillOpacity: 0.9,
+    })
+      .bindPopup(`<strong>${local.tna || local.idn || "Dinossauro"}</strong>`)
+      .addTo(m);
+
+    marcadores[local.oid] = marker;
+  });
+
+  // Centraliza no primeiro local encontrado
+  const primeiro = locaisFosseis.find((local) => local.lat && local.lng);
+
+  if (primeiro) {
+    m.flyTo([primeiro.lat, primeiro.lng], 5, {
+      duration: 1,
+    });
+
+    marcadores[primeiro.oid].openPopup();
+  }
+}
+
+export function ativarHoverLista() {
+  document.querySelectorAll(".lista-local").forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      const marker = marcadores[item.dataset.id];
+
+      if (!marker) return;
+
+      m.flyTo(marker.getLatLng(), 6, {
+        duration: 1,
+      });
+
+      marker.openPopup();
+    });
+
+    item.addEventListener("mouseleave", () => {
+      const marker = marcadores[item.dataset.id];
+
+      if (marker) {
+        marker.closePopup();
       }
     });
-  }
+  });
 }
