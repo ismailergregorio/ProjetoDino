@@ -2,28 +2,81 @@
 <html lang="en">
 
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>DinoWord</title>
- <link rel="stylesheet" href="styles.css">
- <link rel="stylesheet" href="Styles/header.css">
- <link rel="stylesheet" href="Styles/filtros.css">
- <link rel="stylesheet" href="Styles/fosseis.css">
- <link rel="stylesheet" href="Styles/info-fosseis.css">
- <link rel="stylesheet" href="Styles/mapG.css">
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DinoWord</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Styles/header.css">
+    <link rel="stylesheet" href="Styles/filtros.css">
+    <link rel="stylesheet" href="Styles/fosseis.css">
+    <!-- <link rel="stylesheet" href="Styles/info-fosseis.css"> -->
+    <link rel="stylesheet" href="Styles/mapG.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
 <body>
- <header id="naveBar">
- </header>
- <section id="f">
- </section>
- <section class="mapa">
-  <div id="map">
-  </div>
-  <div id="lista-locais" class="lista-local"></div>
- </section>
+    <header id="naveBar">
+    </header>
+    <section id="f">
+    </section>
+    <section class="mapa">
+        <div id="map">
+            <div class="grupos">
+                <div class="grupo-filtro">
+
+                    <span class="titulo-filtro">Período</span>
+
+                    <label class="opcao-filtro">
+                        <input type="radio" name="periodo" value="" checked>
+                        <span>Todos</span>
+                    </label>
+
+                    <label class="opcao-filtro">
+                        <input type="radio" name="periodo" value="triassic">
+                        <span>Triássico</span>
+                    </label>
+
+                    <label class="opcao-filtro">
+                        <input type="radio" name="periodo" value="jurassic">
+                        <span>Jurássico</span>
+                    </label>
+
+                    <label class="opcao-filtro">
+                        <input type="radio" name="periodo" value="cretaceous">
+                        <span>Cretáceo</span>
+                    </label>
+
+                </div>
+                <div class="grupo-filtro">
+
+                    <span class="titulo-filtro">Dieta</span>
+
+                    <label class="opcao-filtro">
+                        <input type="radio" name="dieta" value="" checked>
+                        <span>Todas</span>
+                    </label>
+
+                    <label class="opcao-filtro">
+                        <input type="radio" name="dieta" value="herbivore">
+                        <span>Herbívoro</span>
+                    </label>
+
+                    <label class="opcao-filtro">
+                        <input type="radio" name="dieta" value="carnivore">
+                        <span>Carnívoro</span>
+                    </label>
+
+                    <label class="opcao-filtro">
+                        <input type="radio" name="dieta" value="omnivore">
+                        <span>Onívoro</span>
+                    </label>
+
+                </div>
+            </div>
+
+        </div>
+        <div id="lista-locais" class="lista-localA"></div>
+    </section>
 </body>
 <script type="module" src="./JavaScript/scriptPegeMapFosseis.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>

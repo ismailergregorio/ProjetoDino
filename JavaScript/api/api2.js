@@ -27,7 +27,7 @@ async function buscarTaxonPBDB(nome) {
 }
 
 // 3. Busca a lista de ocorrências pura do PBDB
-async function buscarOcorrenciasPBDB(nome) {
+export async function buscarOcorrenciasPBDB(nome) {
     const url = `${PBDB}/occs/list.json?base_name=${encodeURIComponent(nome)}&show=time,coords,loc`;
     try {
         const response = await fetch(url);
