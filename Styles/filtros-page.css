@@ -99,3 +99,40 @@
     padding: 18px;
   }
 }
+
+
+@media (max-width: 600px) {
+  .mais-dino {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    overflow-x: visible; 
+  }
+
+  .mais-dino a {
+    min-width: 0; 
+    justify-content: center; 
+    padding: 15px 10px;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .mais-dino a:not(:last-child) {
+    border-right: none;
+  }
+
+  .mais-dino a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .mais-dino a:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+  .mais-dino a.ativo::after {
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+    box-shadow: 0 0 12px rgba(105, 181, 28, 0.45);
+  }
+}

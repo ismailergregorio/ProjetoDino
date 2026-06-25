@@ -104,58 +104,61 @@ function mostraMapa() {
 
                </div>
   `;
+  console.log("rrrrrrrrrrrrr");
   resutadoLocaisFosseis(infoDino);
 }
 
 function mostrarClassificacao() {
   const idHtml = document.getElementById("resultado");
   idHtml.innerHTML = `
-    <h2 class="titulo-secao">
-        Classificação Científica
-    </h2>
+  <div class="clasificacao">
+      <h2 class="titulo-secao">
+          Classificação Científica
+      </h2>
 
-    <div class="grid-classificacao">
+      <div class="grid-classificacao">
 
-        <div class="card-classificacao">
-            <span class="titulo">Reino</span>
-            <span class="valor" id="reino">Animalia</span>
-        </div>
+          <div class="card-classificacao">
+              <span class="titulo">Reino</span>
+              <span class="valor" id="reino">Animalia</span>
+          </div>
 
-        <div class="card-classificacao">
-            <span class="titulo">Filo</span>
-            <span class="valor" id="filo">Chordata</span>
-        </div>
+          <div class="card-classificacao">
+              <span class="titulo">Filo</span>
+              <span class="valor" id="filo">Chordata</span>
+          </div>
 
-        <div class="card-classificacao">
-            <span class="titulo">Classe</span>
-            <span class="valor" id="classe">Reptilia</span>
-        </div>
+          <div class="card-classificacao">
+              <span class="titulo">Classe</span>
+              <span class="valor" id="classe">Reptilia</span>
+          </div>
 
-        <div class="card-classificacao">
-            <span class="titulo">Clado</span>
-            <span class="valor" id="clado">Dinosauria</span>
-        </div>
+          <div class="card-classificacao">
+              <span class="titulo">Clado</span>
+              <span class="valor" id="clado">Dinosauria</span>
+          </div>
 
-        <div class="card-classificacao">
-            <span class="titulo">Ordem</span>
-            <span class="valor" id="ordem">Ornithischia</span>
-        </div>
+          <div class="card-classificacao">
+              <span class="titulo">Ordem</span>
+              <span class="valor" id="ordem">Ornithischia</span>
+          </div>
 
-        <div class="card-classificacao">
-            <span class="titulo">Família</span>
-            <span class="valor" id="familia">Ceratopsidae</span>
-        </div>
+          <div class="card-classificacao">
+              <span class="titulo">Família</span>
+              <span class="valor" id="familia">Ceratopsidae</span>
+          </div>
 
-        <div class="card-classificacao">
-            <span class="titulo">Gênero</span>
-            <span class="valor" id="genero">Triceratops</span>
-        </div>
+          <div class="card-classificacao">
+              <span class="titulo">Gênero</span>
+              <span class="valor" id="genero">Triceratops</span>
+          </div>
 
-        <div class="card-classificacao">
-            <span class="titulo">Espécie</span>
-            <span class="valor" id="especie">Triceratops horridus</span>
-        </div>
+          <div class="card-classificacao">
+              <span class="titulo">Espécie</span>
+              <span class="valor" id="especie">Triceratops horridus</span>
+          </div>
 
+      </div>
     </div>
   `;
 }

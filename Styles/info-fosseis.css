@@ -1,13 +1,20 @@
 .lista-local {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 14px;
-
   margin-bottom: 18px;
+  padding: 5px;
+  border-radius: 15px;
+}
+.lista-local:hover{
+  background: var(--shadow-green);
 }
 
 .icone-local {
   margin-top: 3px;
+  display: flex;
+  flex-direction: column;
 }
 
 .icone-local i {
