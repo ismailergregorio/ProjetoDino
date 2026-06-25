@@ -82,3 +82,110 @@ body {
     margin: 0;
     padding: 0;
 }
+
+
+.leaflet-popup-content-wrapper{
+    background:#111827;
+    border:1px solid #243343;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.45);
+    overflow:hidden;
+}
+
+.leaflet-popup-tip{
+    background:#111827;
+}
+
+.leaflet-popup-content{
+
+    margin:0;
+    width:200px !important;
+
+    color:#FFF;
+
+    font-family:inherit;
+}
+
+
+/* Card */
+
+.popup-dino{
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#111827;
+}
+
+
+/* Imagem */
+
+.popup-img{
+
+    width:100%;
+
+    height:80px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+
+/* Informações */
+
+.popup-info{
+
+    padding:18px;
+}
+
+.popup-info h3{
+
+    margin:0 0 14px;
+
+    font-size:1.1rem;
+
+    color:#69b51c;
+
+    font-weight:700;
+}
+
+
+/* Itens */
+
+.popup-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:10px;
+
+    color:#D5DCE4;
+
+    font-size:.88rem;
+}
+
+.popup-item svg{
+
+    width:17px;
+
+    height:17px;
+
+    color:#69b51c;
+
+    flex-shrink:0;
+}
+
+
+/* Hover */
+
+.popup-dino:hover{
+
+    transform:translateY(-2px);
+
+    transition:.25s;
+}

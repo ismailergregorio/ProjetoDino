@@ -1,11 +1,11 @@
+import { BuscarImagem } from "../api/api2.js";
 export let m;
 export const marcadores = {};
 let camadaMarcadores;
 
 export async function mapa(locais, id = "map") {
-  console.log("tttttt");
+  console.log("LLLLLLLLLLLLLLLLLLLLLLLL");
   console.log(locais);
-
   let locaisFosseis = [];
 
   if (Array.isArray(locais)) {
@@ -20,45 +20,32 @@ export async function mapa(locais, id = "map") {
     locaisFosseis = [];
   }
 
-  // ==========================================================
-  // NOVA CORREÇÃO: Destruição total para evitar o bug cinzento
-  // ==========================================================
-  
-  // 1. Se a variável 'm' já tem um mapa, removemo-lo completamente da memória
   if (m && typeof m.remove === "function") {
     try {
-      m.remove(); 
+      m.remove();
     } catch (e) {
       console.log("Aviso ao remover mapa antigo:", e);
     }
-    m = null; // Reseta a variável para forçar a recriação abaixo
+    m = null;
   }
 
-  // 2. Cria sempre um mapa do zero associado ao novo elemento atual do HTML
   m = L.map(id, {
     zoomControl: true,
     worldCopyJump: true,
   }).setView([0, 0], 2);
 
-  L.tileLayer(
-    "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
-    {
-      attribution: "&copy; OpenStreetMap &copy; CARTO",
-      minZoom: 1,
-      maxZoom: 20,
-    }
-  ).addTo(m);
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+    attribution: "&copy; OpenStreetMap &copy; CARTO",
+    minZoom: 1,
+    maxZoom: 20,
+  }).addTo(m);
 
   camadaMarcadores = L.layerGroup().addTo(m);
 
-  // Forçamos o reajuste logo após a criação por segurança
   setTimeout(() => {
     m.invalidateSize();
   }, 50);
 
-  // ==========================================================
-
-  // O resto do teu código continua exatamente igual daqui para baixo...
   camadaMarcadores.clearLayers();
   for (const prop in marcadores) {
     delete marcadores[prop];
@@ -66,7 +53,10 @@ export async function mapa(locais, id = "map") {
 
   console.log(`Plotando ${locaisFosseis.length} registros no mapa.`);
 
-  locaisFosseis.forEach((local) => {
+  locaisFosseis.forEach(async (local) => {
+    const nome = locais.dadosTaxonPBDB.records[0].nam;
+    const imagem = await BuscarImagem(nome);
+
     const latitude = local.lat || local.lng ? local.lat : local.lat;
     const longitude = local.lng || local.lon;
 
@@ -79,8 +69,35 @@ export async function mapa(locais, id = "map") {
       weight: 2,
       opacity: 1,
       fillOpacity: 0.9,
-    })
-      .bindPopup(`<strong>${local.tna || local.idn || "Dinossauro"}</strong>`);
+    });
+
+    marker.bindPopup(`
+    <div class="popup-dino">
+
+    <img
+        src="${imagem}"
+        alt="${nome}"
+        class="popup-img"
+    >
+
+    <div class="popup-info">
+
+        <h3>${nome}</h3>
+
+        <div class="popup-item">
+            <i data-lucide="map-pin"></i>
+            <span>${local.stp || "Local desconhecido"}, ${local.cc2 || ""}</span>
+        </div>
+
+        <div class="popup-item">
+            <i data-lucide="calendar"></i>
+            <span>${local.eag} - ${local.lag} milhões de anos</span>
+        </div>
+
+    </div>
+
+</div>
+`);
 
     camadaMarcadores.addLayer(marker);
 
@@ -105,6 +122,9 @@ export async function mapa(locais, id = "map") {
       marcadores[primeiro.oid].openPopup();
     }
   }
+  marker.on("popupopen", () => {
+    lucide.createIcons();
+  });
 }
 
 export function ativarHoverLista() {
@@ -128,34 +148,65 @@ export function ativarHoverLista() {
   });
 }
 
-export function addPoites(consultas) {
+export function addPoites(consultas, taxonLista) {
   camadaMarcadores.clearLayers();
 
   // Limpa o objeto de referências
   for (const id in marcadores) {
     delete marcadores[id];
   }
+  const taxon = taxonLista.flatMap((c) => c.records[0]);
   const registros = consultas.flatMap((c) => c.records);
+  taxon.forEach((tax) => {
+    console.log(tax);
 
-  registros.forEach((local) => {
-    const latitude = local.lat;
-    const longitude = local.lng ?? local.lon;
+    registros.forEach(async (local) => {
+      const latitude = local.lat;
+      const longitude = local.lng ?? local.lon;
+      const imagem = await BuscarImagem(tax.nam);
 
-    if (latitude == null || longitude == null) return;
+      if (latitude == null || longitude == null) return;
 
-    const marker = L.circleMarker([latitude, longitude], {
-      radius: 7,
-      fillColor: "#69b51c",
-      color: "#ffffff",
-      weight: 2,
-      opacity: 1,
-      fillOpacity: 0.9,
-    }).bindPopup(`<strong>${local.tna || "Dinossauro"}</strong>`);
+      const marker = L.circleMarker([latitude, longitude], {
+        radius: 7,
+        fillColor: "#69b51c",
+        color: "#ffffff",
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.9,
+      }).bindPopup(`
+    <div class="popup-dino">
 
-    camadaMarcadores.addLayer(marker);
+    <img
+        src="${imagem}"
+        alt="${tax.nam}"
+        class="popup-img"
+    >
 
-    if (local.oid) {
-      marcadores[local.oid] = marker;
-    }
+    <div class="popup-info">
+
+        <h3>${tax.nam}</h3>
+
+        <div class="popup-item">
+            <i data-lucide="map-pin"></i>
+            <span>${local.stp || "Local desconhecido"}, ${local.cc2 || ""}</span>
+        </div>
+
+        <div class="popup-item">
+            <i data-lucide="calendar"></i>
+            <span>${latitude} - ${longitude} Ma</span>
+        </div>
+
+    </div>
+
+</div>
+`);
+
+      camadaMarcadores.addLayer(marker);
+
+      if (local.oid) {
+        marcadores[local.oid] = marker;
+      }
+    });
   });
 }

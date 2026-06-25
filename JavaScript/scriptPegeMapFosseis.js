@@ -1,5 +1,6 @@
-import { buscarDinossauro, buscarOcorrenciasPBDB } from "./api/api2.js";
+import { buscarOcorrenciasPBDB, buscarTaxonPBDB } from "./api/api2.js";
 import { filtro } from "./componentes/filtros.js";
+import { footer } from "./componentes/footer.js";
 import { header } from "./componentes/header.js";
 import { addPoites, mapa } from "./componentes/map.js";
 import { resultadoLocaisFosseis2 } from "./pegeDino/resultadoLocaisFosseis.js";
@@ -34,19 +35,27 @@ async function verificarFiltros() {
 
   console.clear();
   console.log(dadosFiltrados);
-  const somente50 = dadosFiltrados.slice(0,10);
+  const somente50 = dadosFiltrados.slice(0, 10);
 
   const consultas = await Promise.all(
     somente50.map((d) => buscarOcorrenciasPBDB(d.nome)),
   );
+
+  const consultasDados = await Promise.all(
+    somente50.map((d) => buscarTaxonPBDB(d.nome)),
+  );
+  console.log("Ocorencisa")
   console.log(consultas);
 
-  resultadoLocaisFosseis2(consultas);
+  console.log("Taxon")
+  console.log(consultasDados);
+
+  resultadoLocaisFosseis2(consultas,consultasDados);
 }
 
-
 header();
-filtro();
+footer();
+filtro("Mapa de Ocorencias De Fosseis", "Selecione o Periodo e Dieta");
 verificarFiltros();
 
 document.querySelectorAll('input[type="radio"]').forEach((radio) => {

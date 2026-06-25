@@ -1,11 +1,11 @@
-export function filtro() {
+export function filtro(titulo,sub) {
   const idFiltro = document.getElementById("f");
 
   idFiltro.innerHTML += `
                <div id="filtros">
                 <div class="title">
-                    <h2>Principais Dinossauros</h2>
-                    <p>Conheça alguns dos dinossauros mais incriveis que ja existiram.</p>
+                    <h2>${titulo}</h2>
+                    <p>${sub}</p>
                 </div>
                 </div>
             </div>

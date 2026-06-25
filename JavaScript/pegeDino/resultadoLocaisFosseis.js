@@ -2,8 +2,6 @@ import { mapa, ativarHoverLista, addPoites } from "../componentes/map.js";
 import { resultadoListaFosseis } from "./resultado-page.js";
 
 export function resutadoLocaisFosseis(infoDino) {
-  console.log("aaaaaaaaaa");
-  console.log(infoDino, "map2");
   mapa(infoDino);
   console.log(infoDino.dadosOcorrenciasPBDB.records.length);
   resultadoListaFosseis(infoDino, infoDino.dadosOcorrenciasPBDB.records.length);
@@ -58,11 +56,10 @@ function resultadoListaF(consultas) {
   }
 }
 
-export function resultadoLocaisFosseis2(consultas) {
+export function resultadoLocaisFosseis2(consultas,taxon) {
   console.log(consultas);
 
-  // Certifique-se de que a função addPoints trate o array 'consultas' corretamente
-  addPoites(consultas);
+  addPoites(consultas,taxon);
 
   const registros = consultas.flatMap((c) => c.records ?? []);
 
@@ -70,7 +67,6 @@ export function resultadoLocaisFosseis2(consultas) {
     records: registros,
   };
 
-  // Agora a função resultadoListaF sabe lidar com o objeto 'dados'
   resultadoListaF(dados);
 
   ativarHoverLista();

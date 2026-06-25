@@ -1,4 +1,5 @@
 import { header } from "./componentes/header.js";
+import { footer } from "./componentes/footer.js";
 import { buscarDinossauro } from "./api/api2.js";
 import {
   resultadoSobre,
@@ -207,9 +208,11 @@ export function render() {
 
 import { ativarHoverLista, mapa, marcadores } from "./componentes/map.js";
 
+
 console.log(dados);
 console.log(infoDino);
 header();
+footer();
 banner(infoDino, dados);
 filtroPage();
 render();

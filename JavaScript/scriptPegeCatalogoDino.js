@@ -2,6 +2,7 @@ import { filtro } from "./componentes/filtros.js";
 import { header } from "./componentes/header.js";
 import { buscarDinossauro } from "./api/api2.js";
 import {carregarCards} from "./CardsDino.js"
+import { footer } from "./componentes/footer.js";
 
 const DADOS_50MAIS = "./Dados/top50.json";
 const DADOS_IMAGENS = "./Dados/imagens.json";
@@ -80,5 +81,6 @@ async function obterDadosDosDinossauros() {
 }
 
 header();
-filtro();
+footer();
+filtro("Catalogo de Dinossauros","Mais Informaçoes");
 obterDadosDosDinossauros();

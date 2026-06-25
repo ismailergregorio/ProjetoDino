@@ -1,0 +1,275 @@
+/* ==========================
+   FOOTER
+========================== */
+
+.footer{
+    width:100%;
+
+    margin-top:80px;
+
+    background:linear-gradient(
+        180deg,
+        var(--bg-card),
+        var(--bg-primary)
+    );
+
+    border-top:1px solid var(--border-primary);
+
+    box-shadow:0 -10px 25px rgba(0,0,0,.35);
+}
+
+.footer-container{
+
+    max-width:1500px;
+
+    margin:0 auto;
+
+    padding:55px 40px;
+
+    display:grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr
+        1fr;
+
+    gap:50px;
+
+    align-items:flex-start;
+}
+
+/* ==========================
+   TÍTULOS
+========================== */
+
+.footer h3{
+
+    color:var(--color-primary);
+
+    font-size:1.7rem;
+
+    margin-bottom:20px;
+}
+
+.footer h4{
+
+    color:var(--text-title);
+
+    margin-bottom:18px;
+
+    font-size:1.05rem;
+
+    position:relative;
+}
+
+.footer h4::after{
+
+    content:"";
+
+    display:block;
+
+    width:45px;
+
+    height:2px;
+
+    margin-top:8px;
+
+    background:var(--color-primary);
+}
+
+/* ==========================
+   TEXTO
+========================== */
+
+.footer p{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+    font-size:.95rem;
+}
+
+/* ==========================
+   LINKS
+========================== */
+
+.footer-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+}
+
+.footer-links a{
+
+    color:var(--text-secondary);
+
+    text-decoration:none;
+
+    transition:.25s;
+}
+
+.footer-links a:hover{
+
+    color:var(--color-primary);
+
+    transform:translateX(6px);
+}
+
+/* ==========================
+   TECNOLOGIAS
+========================== */
+
+.footer-tech{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+}
+
+.tech-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:var(--text-secondary);
+
+    transition:.25s;
+}
+
+.tech-item svg{
+
+    width:18px;
+
+    height:18px;
+
+    color:var(--color-primary);
+
+    flex-shrink:0;
+}
+
+.tech-item:hover{
+
+    color:var(--text-title);
+
+    transform:translateX(5px);
+}
+
+/* ==========================
+   DESENVOLVEDOR
+========================== */
+
+.footer-dev strong{
+
+    color:var(--text-title);
+
+    font-size:1rem;
+}
+
+.social{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:20px;
+}
+
+.social a{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    color:var(--text-primary);
+
+    border:1px solid var(--border-primary);
+
+    background:rgba(255,255,255,.02);
+
+    transition:.3s;
+}
+
+.social a:hover{
+
+    background:rgba(105,181,28,.12);
+
+    color:var(--color-primary);
+
+    border-color:var(--color-primary);
+
+    box-shadow:0 0 18px rgba(105,181,28,.18);
+}
+
+.social svg{
+
+    width:20px;
+    height:20px;
+}
+
+/* ==========================
+   COPYRIGHT
+========================== */
+
+.footer-copy{
+
+    border-top:1px solid var(--border-primary);
+
+    padding:22px;
+
+    text-align:center;
+
+    color:var(--text-muted);
+
+    font-size:.9rem;
+}
+
+.footer-copy strong{
+
+    color:var(--color-primary);
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media (max-width:1200px){
+
+    .footer-container{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media (max-width:700px){
+
+    .footer-container{
+
+        grid-template-columns:1fr;
+
+        padding:40px 25px;
+
+        gap:35px;
+    }
+
+}

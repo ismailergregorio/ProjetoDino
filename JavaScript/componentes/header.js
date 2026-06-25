@@ -21,7 +21,7 @@ export async function header() {
   container.innerHTML = `
         <div class="logo">
             <img src="./imagens/icon-dino.png" alt="Logo do DinoPege" width="50" height="50">
-            <h1><span>Dino</span>Word</h1>
+            <h1><span>Dino</span>World</h1>
         </div>
         <button class="menu-toggle" id="menuToggle">☰</button>
         <nav class="menu" id="menuNav">

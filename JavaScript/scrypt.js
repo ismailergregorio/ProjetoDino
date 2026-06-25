@@ -1,6 +1,7 @@
 import { buscarDinossauro } from "./api/api2.js";
-import {carregarCards} from "./CardsDino.js"
+import { carregarCards } from "./CardsDino.js";
 import { filtro } from "./componentes/filtros.js";
+import { footer } from "./componentes/footer.js";
 import { header } from "./componentes/header.js";
 
 const DADOS_50MAIS = "./Dados/top50.json";
@@ -69,8 +70,12 @@ async function obterDadosDosDinossauros() {
       if (dadosCompletos) {
         resultadosFinais.push(dadosCompletos);
       }
-      const d = await carregarDadosPorValor(DADOS_IMAGENS, "nome", element.nome);
-      carregarCards(jsonBruto,d);
+      const d = await carregarDadosPorValor(
+        DADOS_IMAGENS,
+        "nome",
+        element.nome,
+      );
+      carregarCards(jsonBruto, d);
     }
 
     return resultadosFinais;
@@ -80,5 +85,6 @@ async function obterDadosDosDinossauros() {
   }
 }
 header();
-filtro();
+footer();
+filtro("Principais Dinossauros","Conheça alguns dos dinossauros mais incriveis que ja existiram.");
 obterDadosDosDinossauros();
